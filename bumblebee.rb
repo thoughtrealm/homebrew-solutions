@@ -8,17 +8,17 @@ class Bumblebee < Formula
   version "0.1.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_darwin_arm64.tar.gz"
-      sha256 "2d4c4206098fc473ca329d9345583787bc1855432e626ddf32c9dd8b7a887b3d"
+    if Hardware::CPU.intel?
+      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_darwin_amd64.tar.gz"
+      sha256 "7b61163aa89b3b03fcc0b0db517cfa48ff3cdbb866a115a8f107b741472499cb"
 
       def install
         bin.install "bbee"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_darwin_amd64.tar.gz"
-      sha256 "59ae6fd4b1c018d6f906ce68e21364260efadde16563ca5750ecb8102fa892ae"
+    if Hardware::CPU.arm?
+      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_darwin_arm64.tar.gz"
+      sha256 "dd1755a390e3a863f5ac2ff223fb252f71348ed6d6c6859619527b48ccaf1ad6"
 
       def install
         bin.install "bbee"
@@ -27,17 +27,17 @@ class Bumblebee < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_linux_arm64.tar.gz"
-      sha256 "22b5dd4a240cc1aea4ef8fef0f87fbf264081473383f037d0e4536e211303217"
+    if Hardware::CPU.intel?
+      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_linux_amd64.tar.gz"
+      sha256 "faaa863436391fb6665c463b28a7a147d96a427870f5dd7f1d55ce5130e1c4ff"
 
       def install
         bin.install "bbee"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_linux_amd64.tar.gz"
-      sha256 "61b09dccd860d93c555e5a53420b1b17e3ec040ae266cc04ff916617d8e5bf7f"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_linux_arm64.tar.gz"
+      sha256 "b1edbde4e287c90cecfb6a7a9e947fbfdb74b9f6509673b777839a58fa8fe86a"
 
       def install
         bin.install "bbee"
