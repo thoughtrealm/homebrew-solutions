@@ -1,2 +1,2 @@
-# homebrew-soulutions
+# homebrew-solutions
 Homebrew tap for ThoughtRealm projects
