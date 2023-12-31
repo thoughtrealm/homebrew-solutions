@@ -8,29 +8,39 @@ class Bumblebee < Formula
   version "0.1.0"
 
   on_macos do
-    url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_darwin_all.tar.gz"
-    sha256 "b962fae077c2bdb6c98f235b33c5c72c1c44cd1405be00872358af44127465e2"
+    if Hardware::CPU.arm?
+      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_darwin_arm64.tar.gz"
+      sha256 "2d4c4206098fc473ca329d9345583787bc1855432e626ddf32c9dd8b7a887b3d"
 
-    def install
-      bin.install "bumblebee"
+      def install
+        bin.install "bbee"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_darwin_amd64.tar.gz"
+      sha256 "59ae6fd4b1c018d6f906ce68e21364260efadde16563ca5750ecb8102fa892ae"
+
+      def install
+        bin.install "bbee"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_linux_arm64.tar.gz"
-      sha256 "2a341666ccaa3069538314924530ebc518652e24467736951c0bef640ea9b0a9"
+      sha256 "22b5dd4a240cc1aea4ef8fef0f87fbf264081473383f037d0e4536e211303217"
 
       def install
-        bin.install "bee"
+        bin.install "bbee"
       end
     end
     if Hardware::CPU.intel?
       url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_linux_amd64.tar.gz"
-      sha256 "a731e83c0c5363e4b81ac068c97ac8558996ace7fad7e094339f3c904fd0d1a8"
+      sha256 "61b09dccd860d93c555e5a53420b1b17e3ec040ae266cc04ff916617d8e5bf7f"
 
       def install
-        bin.install "bee"
+        bin.install "bbee"
       end
     end
   end
