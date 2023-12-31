@@ -1,2 +1,2 @@
-# homebrew-thoughtrealm-tap
+# homebrew-thoughtrealm
 Homebrew tap for ThoughtRealm projects
