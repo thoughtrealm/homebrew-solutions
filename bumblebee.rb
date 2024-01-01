@@ -8,39 +8,39 @@ class Bumblebee < Formula
   version "0.1.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_darwin_amd64.tar.gz"
-      sha256 "7b61163aa89b3b03fcc0b0db517cfa48ff3cdbb866a115a8f107b741472499cb"
-
-      def install
-        bin.install "bbee"
-      end
-    end
     if Hardware::CPU.arm?
       url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_darwin_arm64.tar.gz"
-      sha256 "dd1755a390e3a863f5ac2ff223fb252f71348ed6d6c6859619527b48ccaf1ad6"
+      sha256 "0f81874d0a57d1e345f3d85bfd38b297f339fe5e0f8f269c5d28ea0306b81634"
 
       def install
-        bin.install "bbee"
+        bin.install "bumblebee"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_darwin_amd64.tar.gz"
+      sha256 "1f096bc3782678b97e942ffee05896a49336fa123234d4b158c593805d34e047"
+
+      def install
+        bin.install "bumblebee"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_linux_amd64.tar.gz"
-      sha256 "faaa863436391fb6665c463b28a7a147d96a427870f5dd7f1d55ce5130e1c4ff"
-
-      def install
-        bin.install "bbee"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_linux_arm64.tar.gz"
-      sha256 "b1edbde4e287c90cecfb6a7a9e947fbfdb74b9f6509673b777839a58fa8fe86a"
+      sha256 "ab93ce409196c0a881e53b0f456aea45377c58c18dbc35c70a81076ca7c89086"
 
       def install
-        bin.install "bbee"
+        bin.install "bumblebee"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.0/bumblebee_0.1.0_linux_amd64.tar.gz"
+      sha256 "77f45b8e4ca54d007e9dfbdd2e134df52ed0b952d94a3b6e86809d5172f2601e"
+
+      def install
+        bin.install "bumblebee"
       end
     end
   end
