@@ -5,20 +5,20 @@
 class Bumblebee < Formula
   desc ""
   homepage "https://github.com/thoughtrealm/bumblebee"
-  version "0.1.1"
+  version "0.2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.1/bumblebee_0.1.1_darwin_arm64.tar.gz"
-      sha256 "d4cbbeb31c6583e2f37c0202b452ea6601bad877443e6d8d19a581fed2dc9bf9"
+    if Hardware::CPU.intel?
+      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.2.0/bumblebee_0.2.0_darwin_amd64.tar.gz"
+      sha256 "255bb08fa6eb2dbcaa381ccf9399db0132f65e0a5496e067a9f67b3399f0b70c"
 
       def install
         bin.install "bumblebee"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.1/bumblebee_0.1.1_darwin_amd64.tar.gz"
-      sha256 "7fa322ed72d7a382c9ff51caa71b0ab50dcd11c7583a6ed3357134428b0dd30c"
+    if Hardware::CPU.arm?
+      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.2.0/bumblebee_0.2.0_darwin_arm64.tar.gz"
+      sha256 "53af10a6031742eac9da0b527be5e35803dd624e26340ad6b111b6954b8b0de8"
 
       def install
         bin.install "bumblebee"
@@ -27,17 +27,17 @@ class Bumblebee < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.1/bumblebee_0.1.1_linux_arm64.tar.gz"
-      sha256 "43af2b64a2391f0a143e6ea4fccd566ece7b8663dec80127ceaadac690bb75a2"
+    if Hardware::CPU.intel?
+      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.2.0/bumblebee_0.2.0_linux_amd64.tar.gz"
+      sha256 "89941013b1fc957a7f88a60bbd73bdc42036ec1c689f588d755d7a5bfa238bc6"
 
       def install
         bin.install "bumblebee"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.1.1/bumblebee_0.1.1_linux_amd64.tar.gz"
-      sha256 "f5db05a80fba40aa39743586a40a77b9f230b036351295ae10e153b878b8cc72"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/thoughtrealm/bumblebee/releases/download/v0.2.0/bumblebee_0.2.0_linux_arm64.tar.gz"
+      sha256 "c1f7e1b0d2c023ff33212d079a60c80ec8a9c581a58a98a78c1845d3bf343081"
 
       def install
         bin.install "bumblebee"
